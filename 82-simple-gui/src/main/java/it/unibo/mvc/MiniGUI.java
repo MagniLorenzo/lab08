@@ -30,6 +30,8 @@ public class MiniGUI {
         final JPanel boxPan = new JPanel();
         boxPan.setLayout(new BoxLayout(boxPan, BoxLayout.LINE_AXIS));
         canvas.add(boxPan, BorderLayout.CENTER);
+        final JTextField textField = new JTextField("Result");
+        canvas.add(textField, BorderLayout.NORTH);
         final JButton write = new JButton("Print a random number on standard output");
         boxPan.add(write);
         frame.setContentPane(canvas);
