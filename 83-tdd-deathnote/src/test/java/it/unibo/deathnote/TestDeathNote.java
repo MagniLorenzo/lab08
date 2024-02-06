@@ -31,4 +31,13 @@ class TestDeathNote {
         }
     }
 
+    @Test
+    public void testRules() {
+        for (final String rule : DeathNote.RULES){
+            assertNotNull(rule);
+            assertFalse(rule.isBlank());
+        }
+    }
+
+
 }
