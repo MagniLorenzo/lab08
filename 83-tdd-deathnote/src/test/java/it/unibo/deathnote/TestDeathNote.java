@@ -11,6 +11,8 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class TestDeathNote {
 
+    private static final String HUMAN1 = "d3r4t8";
+    private static final String HUMAN2 = "j8k3b9";
     private DeathNote dNote = new DeathNoteImpl();
 
     @Test
@@ -39,5 +41,13 @@ class TestDeathNote {
         }
     }
 
+    @Test
+    public void testNameInsertionInDN(){
+        assertFalse(dNote.isNameWritten(HUMAN1));
+        dNote.writeName(HUMAN1);
+        assertTrue(dNote.isNameWritten(HUMAN1));
+        assertFalse(dNote.isNameWritten(HUMAN2));
+        assertFalse(dNote.isNameWritten(""));
+    }
 
 }
