@@ -2,6 +2,7 @@ package it.unibo.deathnote;
 
 import it.unibo.deathnote.api.DeathNote;
 import it.unibo.deathnote.impl.DeathNoteImpl;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,7 +15,12 @@ class TestDeathNote {
     private static final String HUMAN1 = "d3r4t8";
     private static final String HUMAN2 = "j8k3b9";
     private static final String KART_ACCIDENT = "karting accident";
-    private final DeathNote dNote = new DeathNoteImpl();
+    private DeathNote dNote;
+
+    @BeforeEach
+    void init() {
+        this.dNote = new DeathNoteImpl();
+    }
 
     @Test
     public void testGetRule() {
