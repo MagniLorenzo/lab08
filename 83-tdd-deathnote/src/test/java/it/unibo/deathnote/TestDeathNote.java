@@ -14,7 +14,7 @@ class TestDeathNote {
     private static final String HUMAN1 = "d3r4t8";
     private static final String HUMAN2 = "j8k3b9";
     private static final String KART_ACCIDENT = "karting accident";
-    private DeathNote dNote = new DeathNoteImpl();
+    private final DeathNote dNote = new DeathNoteImpl();
 
     @Test
     public void testGetRule() {
