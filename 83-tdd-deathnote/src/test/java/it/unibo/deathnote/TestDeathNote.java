@@ -71,7 +71,7 @@ class TestDeathNote {
     }
 
     @Test
-    public void testDeathDetailsInsertion() throws InterruptedException{
+    public void testDeathDetailsInsertion() throws InterruptedException {
         try {
             dNote.writeDetails("ran for too long");
             fail("Writing the death details before writing a name should have thrown an exception");
@@ -82,11 +82,11 @@ class TestDeathNote {
         dNote.writeName(HUMAN1);
         assertTrue(dNote.getDeathDetails(HUMAN1).isBlank());
         assertTrue(dNote.writeDetails("ran for too long"));
-        assertEquals(new String("ran for too long"), dNote.getDeathDetails(HUMAN1));
+        assertEquals("ran for too long", dNote.getDeathDetails(HUMAN1));
         dNote.writeName(HUMAN2);
         Thread.sleep(6100);
         assertFalse(dNote.writeDetails("pet a puma thinking it was a dog"));
-        assertEquals(new String(), dNote.getDeathDetails(HUMAN2));
-        assertEquals(new String("ran for too long"), dNote.getDeathDetails(HUMAN1));
+        assertEquals("", dNote.getDeathDetails(HUMAN2));
+        assertEquals("ran for too long", dNote.getDeathDetails(HUMAN1));
     }
 }
