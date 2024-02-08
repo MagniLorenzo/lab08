@@ -25,7 +25,7 @@ public class DeathNoteImpl implements DeathNote {
         if (ruleNumber < 1 || ruleNumber > RULES.size()) {
             throw new IllegalArgumentException("Rule number" + ruleNumber + "doesn't exist. The first rule has number one.");
         }
-        return RULES.get(ruleNumber);
+        return RULES.get(ruleNumber - 1);
     }
 
     @Override
