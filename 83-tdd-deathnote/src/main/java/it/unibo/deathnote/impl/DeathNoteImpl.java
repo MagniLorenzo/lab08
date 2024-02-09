@@ -104,6 +104,9 @@ public class DeathNoteImpl implements DeathNote {
         return this.deathNote.containsKey(name);
     }
 
+    /**
+     * This class represents a page of the death note
+     */
     private static class DeathNotePage {
         private static final String DEFAULT_DEATH_CAUSE = "heart attack";
         private final String name;
