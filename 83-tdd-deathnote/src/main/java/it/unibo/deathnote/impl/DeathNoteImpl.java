@@ -20,6 +20,9 @@ public class DeathNoteImpl implements DeathNote {
         this.timeNameEntered = 0;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getRule(int ruleNumber) {
         if (ruleNumber < 1 || ruleNumber > RULES.size()) {
@@ -28,6 +31,9 @@ public class DeathNoteImpl implements DeathNote {
         return RULES.get(ruleNumber - 1);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void writeName(String name) {
         Objects.requireNonNull(name);
@@ -36,6 +42,9 @@ public class DeathNoteImpl implements DeathNote {
         this.actualName = name;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean writeDeathCause(String cause) {
         if (!isNameWritten(this.actualName) || cause == null) {
@@ -49,6 +58,9 @@ public class DeathNoteImpl implements DeathNote {
         return false;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean writeDetails(String details) {
         if (!isNameWritten(this.actualName) || details == null) {
@@ -62,6 +74,9 @@ public class DeathNoteImpl implements DeathNote {
         return false;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getDeathCause(String name) {
         if (!isNameWritten(name)) {
@@ -70,6 +85,9 @@ public class DeathNoteImpl implements DeathNote {
         return this.deathNote.get(name).getCause();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getDeathDetails(String name) {
         if (!isNameWritten(name)) {
@@ -78,6 +96,9 @@ public class DeathNoteImpl implements DeathNote {
         return this.deathNote.get(name).getDetails();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isNameWritten(String name) {
         return this.deathNote.containsKey(name);
